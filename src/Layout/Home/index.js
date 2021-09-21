@@ -4,7 +4,8 @@ import {listDecks} from "../../utils/api";
 
 export default function Home() {
   const [decks,setDecks] = useState([]);
-useEffect(()=> {
+  const [cards,setCards] = useState([])
+  useEffect(()=> {
   const abortController = new AbortController();
   async function fetchDecks() {
     const decksData = await listDecks(abortController.signal)
@@ -14,6 +15,7 @@ useEffect(()=> {
   fetchDecks()
   
 },[])
+
 
 
 
